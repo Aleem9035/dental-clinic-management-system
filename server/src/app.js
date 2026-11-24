@@ -19,6 +19,8 @@ app.get('/api/health', async (req, res) => {
 });
 
 app.use('/api/doctors', require('./routes/doctors'));
+app.use('/api/appointments', require('./routes/appointments'));
+app.use('/api/dashboard', require('./routes/dashboard'));
 
 // unknown routes
 app.use((req, res) => {

@@ -1,0 +1,80 @@
+:root {
+  --primary: #0d7a8a;
+  --primary-dark: #095c68;
+  --bg: #f4f7f9;
+  --text: #1f2933;
+  --muted: #6b7785;
+  --border: #dde3e8;
+  --danger: #c62828;
+  --success: #2e7d32;
+  --warning: #b26a00;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; background: var(--bg); color: var(--text); }
+h1 { margin: 0; font-size: 1.6rem; }
+
+/* layout */
+.navbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 24px; background: var(--primary); color: #fff; }
+.brand { font-weight: 700; font-size: 1.2rem; }
+.navbar nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.navbar a { color: #fff; text-decoration: none; padding: 6px 12px; border-radius: 6px; }
+.navbar a.active, .navbar a:hover { background: var(--primary-dark); }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+.page-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+
+/* buttons */
+.btn { border: 0; border-radius: 6px; padding: 8px 14px; font-size: 0.95rem; cursor: pointer; background: var(--primary); color: #fff; }
+.btn:hover { background: var(--primary-dark); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-secondary { background: #fff; color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--bg); }
+.btn-danger { background: var(--danger); }
+.btn-danger:hover { background: #8e1c1c; }
+.btn-sm { padding: 4px 10px; font-size: 0.85rem; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #ffbf47; outline-offset: 2px; }
+
+/* cards and stats */
+.card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.stat-value { font-size: 2rem; font-weight: 700; color: var(--primary); }
+.stat-label { color: var(--muted); }
+
+/* table */
+.table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--border); border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { background: #eef3f6; font-size: 0.85rem; text-transform: uppercase; color: var(--muted); }
+.actions { display: flex; gap: 6px; }
+
+/* badges */
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; background: #e4e7eb; }
+.badge-success { background: #e3f4e4; color: var(--success); }
+.badge-warning { background: #fff1d6; color: var(--warning); }
+.badge-danger { background: #fde4e4; color: var(--danger); }
+.badge-info { background: #dff1f5; color: var(--primary-dark); }
+
+/* forms */
+.form-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.form-field label { font-weight: 600; font-size: 0.9rem; }
+input, select, textarea { padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; font-family: inherit; }
+.field-error { color: var(--danger); font-size: 0.85rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.filters input, .filters select { flex: 1 1 160px; }
+
+/* modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 10; }
+.modal { background: #fff; border-radius: 10px; padding: 20px; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.modal-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+
+/* messages */
+.message { padding: 10px 14px; border-radius: 6px; margin-bottom: 16px; }
+.message-error { background: #fde4e4; color: var(--danger); }
+.message-success { background: #e3f4e4; color: var(--success); }
+.state-box { text-align: center; padding: 40px 16px; color: var(--muted); background: #fff; border: 1px dashed var(--border); border-radius: 10px; }
+
+@media (max-width: 600px) {
+  .navbar { padding: 12px 16px; }
+  th, td { padding: 8px; }
+}
